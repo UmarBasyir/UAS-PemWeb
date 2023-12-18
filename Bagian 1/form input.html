@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAS Pemweb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Form Pendataan Vaksinasi Mahasiswa</h1>
+        <form id="dataForm">
+            <table>
+                <tr>
+                    <td><label for="name">Nama</label></td>
+                    <td>: <input type="text" id="name" name="name" required placeholder="input nama anda"></td>
+                </tr>
+                <tr>
+                    <td><label for="nim">NIM</label></td>
+                    <td>: <input type="number" id="nim" name="nim" required placeholder="input nim anda"></td>
+                </tr>
+                <tr>
+                    <td><label>Jenis Kelamin</label></td>
+                    <td>: 
+                        <input type="radio" id="Laki-Laki" name="gender" value="Laki-Laki">
+                        <label for="Laki-Laki">Laki-Laki</label>
+                        <input type="radio" id="Perempuan" name="gender" value="Perempuan">
+                        <label for="Perempuan">Perempuan</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="status">Status Vaksinasi</label></td>
+                    <td>: <input type="checkbox" id="status" name="status"></td>
+                </tr>
+                <tr>
+
+                    <td colspan="2"><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+            
+        </form>
+
+        <h1>Data</h1>
+        <table id="dataTable">
+            <thead>
+            <tr>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Gender</th>
+                <th>Status Vaksinasi</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php
+                  include 'indexconection.php';
+                  include 'session.php';
+                  include 'serverside.php';
+                  
+                  displayFormData();
+                ?>
+            </tbody>
+        </table>
+
+        <script src="indexJava.js"></script>
+        <script src="session.js"></script>
+    </div>
+
+
+</body>
+</html>
